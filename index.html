@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Number guessing game</h1>
+    <p>Guess a number between 1-10.</p>
+
+    <script>
+      function guessGame() {
+        var number = (Math.random() * 11) | 0,
+          guess,
+          text = "Guess a number:";
+        do {
+          guess = prompt(text);
+          if (number < guess) {
+            text = "Your guess is too high!";
+          } else if (number > guess) {
+            text = "Your guess is too low!";
+          }
+        } while (guess != number);
+        document.write("Good Job!");
+      }
+      guessGame();
+    </script>
+    <br />
+    <button onclick="guessGame()">Press the button to play again</button>
+  </body>
+</html>
